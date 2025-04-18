@@ -1,36 +1,32 @@
-# <a href="https://www.linkedin.com/in/pukar-kafley/">Pukar Kafley</a>'s IT and Cybersecurity Project Portfolio 🔐
+# 🛡️ Windows 10 STIG Compliance – PowerShell Remediation Scripts
 
-I'm passionate about cybersecurity and love tackling complex challenges through hands-on projects. From vulnerability management to threat detection, these projects allow me to dive deep into the ever-evolving landscape of cybersecurity. Please feel free to check them out and see the work I’ve put into enhancing security operations and processes!
-
----
-
-## ⚠️ Vulnerability Management Projects
-
-- **[Vulnerability Management Program Implementation](https://github.com/Pukarkafley21/Vulnerability-Management-Program)**
+This repository contains PowerShell scripts developed by [Pukar Kafley](https://www.linkedin.com/in/pukar-kafley/) to remediate specific DISA STIG vulnerabilities for Windows 10 systems. Each script is named after the STIG ID it remediates and follows structured formatting for clarity, auditability, and automation.
 
 ---
 
-## 🚨 Threat Hunting and Security Operations
+## 📜 Remediation Scripts
 
-- **[Threat Hunting Scenario (Tor Browser Usage)](https://github.com/Pukarkafley21/Threat-Hunting-Scenario-TOR)**
-
----
-
-## ✅ Compliance Projects
-
-- **[Windows 10 STIG Compliance Scripts](https://github.com/Pukarkafley21/STIG-Compliance-Wn10)**  
-  A growing collection of PowerShell scripts that automate DISA STIG remediations on Windows 10, improving system hardening and security baseline enforcement.
+### 🔒 `WN10-00-000175` – Disable Secondary Logon Service
+Disables the Secondary Logon service (`seclogon`), which allows users to run programs with alternate credentials — a potential vector for credential theft.
+➡️ [View Script](https://github.com/Pukarkafley21/STIG-Compliance-Scripts-WN10/blob/main/WN10-00-000175.ps1)
 
 ---
 
-## 🤳 Connect With Me
+### 🛡️ `WN10-AC-000005` – Configure Account Lockout Duration
+Sets the account lockout duration to at least 15 minutes to mitigate brute-force password attacks on local accounts.
+➡️ [View Script](https://github.com/Pukarkafley21/STIG-Compliance-Scripts-WN10/blob/main/WN10-AC-000005.ps1)
 
-[<img align="left" alt="___________ | YouTube" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/youtube.svg" />][youtube]
-[<img align="left" alt="___________ | Twitter" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/twitter.svg" />][twitter]
-[<img align="left" alt="Pukar's LinkedIn | LinkedIn" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/linkedin.svg" />][linkedin]
-[<img align="left" alt="___________ | Instagram" width="22px" src="https://cdn.jsdelivr.net/npm/simple-icons@v3/icons/instagram.svg" />][instagram]
+---
 
-[twitter]: https://twitter.com/___________
-[youtube]: https://www.youtube.com/c/___________
-[instagram]: https://www.instagram.com/___________
-[linkedin]: https://www.linkedin.com/in/pukar-kafley/
+### 🌐 `WN10-CC-000238` – Prevent Certificate Error Overrides in Microsoft Edge
+Configures Microsoft Edge to block users from bypassing SSL/TLS certificate warnings, protecting against man-in-the-middle attacks.
+➡️ [View Script](https://github.com/Pukarkafley21/STIG-Compliance-Scripts-WN10/blob/main/WN10-CC-000238%20.ps1)
+
+---
+
+## ⚙️ Usage
+
+> Run scripts with **Administrator privileges**.  
+> Ensure your execution policy permits scripts:
+```powershell
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
